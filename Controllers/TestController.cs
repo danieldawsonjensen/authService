@@ -29,6 +29,6 @@ public class TestController : ControllerBase
     [HttpGet]
     public async Task<IActionResult> Get()
     {
-        return Ok("You're authorized");
+        return Ok("You're authorized!");
     }
 }
