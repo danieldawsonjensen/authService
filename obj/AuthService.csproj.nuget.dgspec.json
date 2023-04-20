@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/daddel/Documents/Skole/4sem/infra/m11/AuthService/AuthService.csproj": {}
+    "/Users/daddel/Documents/Skole/4sem/infra/fleet-management/authService/AuthService.csproj": {}
   },
   "projects": {
-    "/Users/daddel/Documents/Skole/4sem/infra/m11/AuthService/AuthService.csproj": {
+    "/Users/daddel/Documents/Skole/4sem/infra/fleet-management/authService/AuthService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/daddel/Documents/Skole/4sem/infra/m11/AuthService/AuthService.csproj",
+        "projectUniqueName": "/Users/daddel/Documents/Skole/4sem/infra/fleet-management/authService/AuthService.csproj",
         "projectName": "AuthService",
-        "projectPath": "/Users/daddel/Documents/Skole/4sem/infra/m11/AuthService/AuthService.csproj",
+        "projectPath": "/Users/daddel/Documents/Skole/4sem/infra/fleet-management/authService/AuthService.csproj",
         "packagesPath": "/Users/daddel/.nuget/packages/",
-        "outputPath": "/Users/daddel/Documents/Skole/4sem/infra/m11/AuthService/obj/",
+        "outputPath": "/Users/daddel/Documents/Skole/4sem/infra/fleet-management/authService/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/daddel/.nuget/NuGet/NuGet.Config"
@@ -46,6 +46,18 @@
               "target": "Package",
               "version": "[7.0.4, )"
             },
+            "MongoDB.Bson": {
+              "target": "Package",
+              "version": "[2.19.1, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.19.1, )"
+            },
+            "MongoDB.Driver.Core": {
+              "target": "Package",
+              "version": "[2.19.1, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
@@ -70,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.202/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.203/RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -17,11 +17,14 @@ public class AuthController : ControllerBase
 
     private readonly ILogger<AuthController> _logger;
     private readonly IConfiguration _config;
+    private UserRepository _userRepository;
 
-    public AuthController(ILogger<AuthController> logger, IConfiguration config)
+    public AuthController(ILogger<AuthController> logger, IConfiguration config, UserRepository userRepository)
     {
         _config = config;
         _logger = logger;
+        _userRepository = userRepository;
+
     }
 
 
@@ -50,13 +53,23 @@ public class AuthController : ControllerBase
 
     [AllowAnonymous]
     [HttpPost("login")]
-    public async Task<IActionResult> Login([FromBody] LoginModel login)
+    public async Task<IActionResult> Login([FromBody] User user) // her skal hentes bruger fra mongo
     {
-        if (login.Username != "username" || login.Password != "password")
+        var loginUser = await _userRepository.FindUserByUsernameAndPassword(user.MongoId, user.Username, user.Password); // henter bruger
+
+        if (user == null)
         {
             return Unauthorized();
         }
-        var token = GenerateJwtToken(login.Username);
+
+        /* dette skal slettes
+        if (loginUser.Username != "username" || loginUser.Password != "password")
+        {
+            return Unauthorized();
+        }
+        hertil */
+
+        var token = GenerateJwtToken(user.Username);
         return Ok(new { token });
     }
 

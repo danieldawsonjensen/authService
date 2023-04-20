@@ -1,4 +1,5 @@
 using System.Text;
+using Model;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 
@@ -20,12 +21,13 @@ builder.Services
         ValidIssuer = myIssuer,
         ValidAudience = "http://localhost",
         IssuerSigningKey =
-     new SymmetricSecurityKey(Encoding.UTF8.GetBytes(mySecret))
+    new SymmetricSecurityKey(Encoding.UTF8.GetBytes(mySecret))
     };
 });
 
 
 // Add services to the container.
+builder.Services.AddSingleton<UserRepository>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
